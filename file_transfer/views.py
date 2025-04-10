@@ -60,6 +60,6 @@ def download_file(request):
         response['Content-Disposition'] = f'attachment; filename="{filename}"'
 
         # Optional: delete the file after download
-        # supabase.storage.from_(bucket).remove(matching_file)
+        supabase.storage.from_(bucket).remove(matching_file)
 
         return response
